@@ -1,0 +1,209 @@
+
+  html {
+    margin: 0;
+    height: auto;
+    min-height: 100%; /* can also use viewport units (height: 100vh) */
+    scroll-behavior: smooth;
+  }
+  body{
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-collapse: collapse;
+    overflow-y: hidden;
+  }
+  
+  section {
+    flex: 1 1 auto;
+    height: auto; /* takes the visible area of the "main" div */
+    min-height: 100%;
+    overflow: auto; /* recommended */
+    border-bottom: 1px solid;
+  }
+
+  .page-header {
+    display: flex;
+    padding: 3px;
+
+    justify-self: flex-start;
+  }
+
+.right-header{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.left-header{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.right-button{
+    padding: 5px;
+    width: 6px;
+    height: 5px;
+    margin: 5px;
+    line-height: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+}
+.left-button{
+
+    padding: 5px;
+    width: 6px;
+    height: 5px;
+    margin: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.About-Me{
+    display: flex;
+
+
+    flex-wrap: wrap;
+
+
+    background-color: #957D95;
+
+
+  
+
+}
+#Picture{
+    display: flex;
+    padding: 25px;
+    flex: 1 0 50%;
+
+
+
+}
+#Bio{
+    display: flex;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1 0 50%;
+
+
+}
+
+
+.Video-Games{
+    display: flex;    
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+
+    background-color: #ECCFC3;
+
+
+   
+}
+.Game{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+}
+
+
+.Personal-Projects{
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    background-color: #ECB8A5;
+    
+
+
+}
+#UTutorsText{
+  display: flex;
+  padding: 25px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1 0 50%;
+}
+#UTutors{
+  display: flex;
+  flex: 1 0;
+
+
+}
+
+
+.Education{
+
+
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #E49AB0;
+}
+
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  
+  
+}
+.item {
+  flex: 0 30%;
+  height: 100px;
+  margin-bottom: 2%; /* (100-32*3)/2 */
+  margin-top: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+  line-height: 100px;
+  background-color: #2C3D55;
+  color: white;
+
+
+
+}
+.ClassButton:link{
+  text-decoration: none;
+  color: white;
+
+}
+
+  header{background-color:  #2C3D55}
+  a:link { text-decoration: none; 
+  color: white;}
+  a:visited { 
+    text-decoration: none; 
+    color: white; 
+   }
+  section:last-child {border: none}
+  footer {
+    display: flex;
+    background: #2C3D55;
+    justify-self: flex-end;
+    padding: 8px;
+
+}
