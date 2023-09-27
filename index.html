@@ -1,107 +1,14 @@
-<!DOCTYPE html>
-<html lang ="en">
+<html>
 
-<div id="container">
+<!-- TODO: Replace Mr. Miyamoto's name with yours -->
+<h1>The Portfolio of Shigeru Miyamoto</h1>
 
-<head>
-<link rel="stylesheet" href="index.css">
-<script>
-    document.body.style.zoom="150%"
-</script>
+<h2>Projects</h2>
 
-  <header class = "page-header">
-    <nav class = "nav">
-        <ul class="left-header">
-            <li><a href="#", class ="left-button">Fardeen Ahmed</a></li>
-        </ul>
-        <ul class="right-header">
-            <li><a href="#Picture", class ="right-button">About Me</a></li>
-            <li><a href="#Game", class ="right-button">Video Games</a></li>
-            <li><a href="#Personal-Projects", class ="right-button">Personal Projects</a></li>
-            <li><a href="#Education", class ="right-button">Education</a></li>
-        </ul>
-    </nav>
-  </header>
-  <main>
-    <section id = "About-Me" name = "About-Me" class = "About-Me">
+<!-- TODO: Erase one of these two. Replace the 'href' link below with a link to your WebGL build page. -->
+<ul>
+<li><a href="WebBuild.zip">The Legend of Zelda (Unity Remaster)</a></li>
+</ul>
 
-        <div id = "Picture">
-            <img src = "/photos/instapic.jpeg" loading="eager">
-
-        <div id = "Bio">
-            
-        </div>
-        <script>
-        var i = 0;
-        var txt = "Hello, I am Fardeen Ahmed, a Computer Science Enginnering Major at the University of Michigan. My goal of creating Video Games, led me to picking Computer Science and allowed me to find other fields within Computer Science to get excited about! All of this led me to creating a web/mobile application with other students, indie video games by myself, tutoring other students in a variety of Computer Science topics, and creating this website."
-        var speed = 20;
-
-        function typeWriter() {
-        if (i < txt.length) {
-            document.getElementById("Bio").innerHTML += txt.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        }
-        }
-        typeWriter();
-
-    
-
-
-        </script>
-
-
-
-
-
-    </section>
-
-    <section id = "Video-Games" name = "Video-Games" class = "Video-Games"> 
-        <div class = "Game" id = "Game">
-            <iframe frameborder="0" src="https://itch.io/embed/1854193?dark=true" width="552" height="167"><a href="https://afardeen.itch.io/run">Run by afardeen</a></iframe>       
-        </div>
-        <div class = "Game">
-            <iframe frameborder="0" src="https://itch.io/embed/1061983?dark=true" width="552" height="167"><a href="https://afardeen.itch.io/dodge">Dodge by afardeen</a></iframe>        
-        </div>
-        <div class = "Game">
-            <iframe frameborder="0" src="https://itch.io/embed/1891570?dark=true" width="552" height="167"><a href="https://afardeen.itch.io/witchintheforest">WitchInTheForest by afardeen</a></iframe>
-        </div>
-        <div>
-            <a href = "WebBuild.zip">Custom Legend of Zelda - Click to Download Zip</a>
-        </div>
-
-    </section>
-    
-    <section id = "Personal-Projects" name ="Personal-Projects" class = "Personal-Projects">
-        <div id = "UTutorsText">
-            UTutors is an up and coming full stack web application/ios application that will be coming to the University of Michigan, built by a group of students at the University of Michigan including myself. This is an app that allows students to apply as tutors based on their transcripts, in order to teach other students. My personal contributions include designing the Entity Relationship Diagram, creating the datbase with PostgreSQL, buliding the backend server in order Create Read Update and Delte information via the RESTFul API. Using Firebase for authentication and state persistance. The right are two screenshots of the Figma Mockups that we have.
-        </div>
-        <div id = "UTutors">
-            <img src = "/photos/UTutorsMock_1.png" width=200 height=400 loading="eager">
-        </div>
-        <div id = "UTutors">
-            <img src = "/photos/UTutorsMock_2.png" width=200 height=400 loading="eager">
-        </div>
-
-
-
-    </section>
-    <section id = "Education" class = "Education">
-        <div class="container">
-            <div class="item"><a href="https://ece.engin.umich.edu/academics/course-information/course-descriptions/eecs-203/", class ="ClassButton">EECS203</a></div>
-            <div class="item"><a href="https://eecs280.org/", class = "ClassButton">EECS280</a></div>
-            <div class="item"><a href="https://eecs281staff.github.io/eecs281.org/", class ="ClassButton">EECS281</a></div>
-            <div class="item"><a href="https://eecs370.github.io/", class ="ClassButton">EECS370</a></div>
-            <div class="item"><a href="https://eecs376.org/", class ="ClassButton">EECS376</a></div>
-            <div class="item"><a href="https://eecs388.org/", class ="ClassButton">EECS388</a></div>
-            <div class="item"><a href="https://eecs484db.github.io/", class ="ClassButton">EECS484</a></div>
-            <div class="item"><a href="https://bulletin.engin.umich.edu/courses/ioe/", class ="ClassButton">IOE373</a></div>
-
-          </div>
-    </section>
-  </main>
-  <footer> &nbsp</footer>
-
-</head>
-</div>
+<!-- TIP: Rename this file "index.html", and it will become the default landing page whenever someone navigates their browser to your domain. -->
 </html>
