@@ -324,10 +324,11 @@
       overflow-y: auto;
     }
     
+    /* Updated Modal Content Styles */
     .modal-content {
       position: relative;
       background-color: #7EBDC2;
-      color: #36311F;
+      color: white; /* Changed text color to white */
       width: 80%;
       max-width: 800px;
       max-height: 80vh;
@@ -347,7 +348,7 @@
     }
     
     .modal-content h2 {
-      color: #9B695D;
+      color: #E8D7A9; /* Updated heading color for better contrast on dark background */
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
       text-align: center;
@@ -357,7 +358,7 @@
       position: absolute;
       top: 15px;
       right: 15px;
-      color: #36311F;
+      color: white; /* Updated close button color */
       font-size: 1.5rem;
       cursor: pointer;
       background: none;
@@ -369,7 +370,7 @@
     }
     
     .modal-content h3 {
-      color: #4A5859;
+      color: #E8D7A9; /* Updated subheading color */
       margin: 1.5rem 0 0.8rem 0;
     }
     
@@ -418,7 +419,7 @@
       background-color: #9B695D;
     }
     
-    /* Updated Skills Section */
+    /* Updated Skills Section with CRT effect */
     .skills {
       display: flex;
       flex-wrap: wrap;
@@ -432,10 +433,15 @@
       padding: 0.5rem 1rem;
       border-radius: 0.5rem;
       font-size: 0.9rem;
-      text-shadow: none;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
       position: relative;
       overflow: hidden;
+      /* Added CRT text effect */
+      text-shadow: 0.05rem 0 0.05rem #ea36af, -0.1rem 0 0.05rem #75fa69;
+      animation-duration: 0.02s;
+      animation-name: textflicker;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
     
     /* Create varied background colors for skills */
@@ -476,42 +482,48 @@
       gap: 1.5rem;
     }
     
-    .degree-card {
-      background: rgba(255, 255, 255, 0.2);
+    /* Updated Card Styles for Modal Content */
+    .degree-card, .project-card, .work-card {
+      background: rgba(74, 88, 89, 0.4); /* Darker background for better contrast with white text */
       border-radius: 0.8rem;
       padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-left: 5px solid #7EBDC2;
       position: relative;
       overflow: hidden;
     }
     
-    .degree-card:nth-child(2) {
+    .degree-card:nth-child(2), .project-card:nth-child(2), .work-card:nth-child(2) {
       border-left-color: #9B695D;
     }
     
-    .degree-title {
+    .degree-title, .card-title {
       font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: #36311F;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: white; /* Updated to white */
     }
     
     .degree-school {
       display: flex;
       align-items: center;
       margin-bottom: 0.5rem;
+      color: white; /* Updated to white */
     }
     
     .school-icon {
       margin-right: 0.5rem;
-      color: #9B695D;
+      color: #E8D7A9; /* Updated icon color for contrast */
     }
     
-    .degree-date {
+    .degree-date, .card-subtitle {
       font-style: italic;
-      color: #4A5859;
+      color: #E8D7A9; /* Updated for better visibility */
       font-size: 0.9rem;
+    }
+    
+    .card-subtitle {
+      margin-bottom: 1rem;
     }
     
     /* Updated Contact Information */
@@ -548,7 +560,7 @@
       color: #36311F;
     }
     
-    /* Updated Course List to be buttons */
+    /* Updated Course List to be buttons with CRT effect */
     .course-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -556,8 +568,9 @@
       margin-top: 1.5rem;
     }
     
+    /* Course Button Styles with CRT effect */
     .course-button {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(74, 88, 89, 0.4); /* Darker background for better contrast */
       padding: 1rem;
       border-radius: 0.6rem;
       border: none;
@@ -565,10 +578,16 @@
       text-align: left;
       font-family: inherit;
       font-size: 0.95rem;
-      color: #36311F;
+      color: white; /* Updated to white */
       border-left: 4px solid #7EBDC2;
       transition: background-color 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      /* Added CRT text effect */
+      text-shadow: 0.05rem 0 0.05rem #ea36af, -0.1rem 0 0.05rem #75fa69;
+      animation-duration: 0.02s;
+      animation-name: textflicker;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
     
     .course-button:nth-child(3n+2) {
@@ -580,7 +599,7 @@
     }
     
     .course-button:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(74, 88, 89, 0.6); /* Darker hover state */
     }
     
     /* Updated Project and Work Cards */
@@ -589,34 +608,6 @@
       grid-template-columns: 1fr;
       gap: 1.5rem;
       margin-top: 1.5rem;
-    }
-    
-    .project-card, .work-card {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 0.8rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #7EBDC2;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .project-card:nth-child(2), .work-card:nth-child(2) {
-      border-left-color: #9B695D;
-    }
-    
-    .card-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-      color: #36311F;
-    }
-    
-    .card-subtitle {
-      font-style: italic;
-      color: #4A5859;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
     }
     
     .card-text {
@@ -639,23 +630,27 @@
       gap: 0.5rem;
     }
     
+    /* Tech Tags */
     .tech-tag {
-      background-color: rgba(126, 189, 194, 0.3);
+      background-color: rgba(232, 215, 169, 0.3); /* Updated for better contrast */
       padding: 0.2rem 0.6rem;
       border-radius: 1rem;
       font-size: 0.8rem;
+      color: white; /* Ensuring text is white */
     }
     
+    /* Link color in cards */
     .card-link {
-      color: #9B695D;
+      color: #E8D7A9; /* Updated link color for better visibility */
       text-decoration: none;
       transition: color 0.3s ease;
     }
     
     .card-link:hover {
-      color: #4A5859;
+      color: white;
       text-decoration: underline;
     }
+    
     .fixed-icon {
         width: 2.6em; /* Ensures consistent width */
         text-align: center; /* Keeps it aligned properly */
@@ -838,19 +833,19 @@
       <p></p>
       
       <div class="course-grid">
-        <button class="course-button" onclick="window.open('#', '_blank')">Data Structures and Algorithms</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Foundations of Computer Science</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Databases</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Data Analytics Tools and Techniques</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Intro to Computer Security</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Web Systems</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Introduction to Game Development</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Introduction to Algorithms</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">User Interface Development</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Natural Language Programming</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Computer Graphics and Generative Models</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Advanced Compilers</button>
-        <button class="course-button" onclick="window.open('#', '_blank')">Software Engineering</button>
+        <button class="course-button" onclick="window.open('https://eecs281staff.github.io/eecs281.org/', '_blank')">Data Structures and Algorithms</button>
+        <button class="course-button" onclick="window.open('https://eecs376.org/', '_blank')">Foundations of Computer Science</button>
+        <button class="course-button" onclick="window.open('https://web.eecs.umich.edu/~mozafari/eecs484/', '_blank')">Databases</button>
+        <button class="course-button" onclick="window.open('https://bulletin.engin.umich.edu/courses/ioe/', '_blank')">Data Analytics Tools and Techniques</button>
+        <button class="course-button" onclick="window.open('https://eecs388.org/', '_blank')">Intro to Computer Security</button>
+        <button class="course-button" onclick="window.open('https://eecs485.org/', '_blank')">Web Systems</button>
+        <button class="course-button" onclick="window.open('https://www.eecs494.com/', '_blank')">Introduction to Game Development</button>
+        <button class="course-button" onclick="window.open('http://www.eecs.umich.edu/courses/eecs477/', '_blank')">Introduction to Algorithms</button>
+        <button class="course-button" onclick="window.open('https://eecs493staff.github.io/eecs493.org/', '_blank')">User Interface Development</button>
+        <button class="course-button" onclick="window.open('https://web.eecs.umich.edu/~chaijy/eecs595-fall21-syllabus.htm', '_blank')">Natural Language Programming</button>
+        <button class="course-button" onclick="window.open('https://um-graphics.github.io/', '_blank')">Computer Graphics and Generative Models</button>
+        <button class="course-button" onclick="window.open('https://web.eecs.umich.edu/~mahlke/courses/583w24/', '_blank')">Advanced Compilers</button>
+        <button class="course-button" onclick="window.open('https://eecs481.org/', '_blank')">Software Engineering</button>
         <button class="course-button" onclick="window.open('#', '_blank')">Human-AI Interaction & Systems</button>
       </div>
     </div>
