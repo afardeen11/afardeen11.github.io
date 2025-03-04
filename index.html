@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fardeen Ahmed - Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    @font-face {
+      font-family: 'Noto Sans Display';
+      font-style: normal;
+      font-weight: 400;
+      src: url(./fonts/NotoSansDisplay-Regular.ttf);
+    }
+    
+    /* Font Awesome for better icons */
+    @font-face {
+      font-family: 'FontAwesome';
+      src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-brands-400.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Noto Sans Display', sans-serif;
+      background-color: #E8D7A9;
+      color: #36311F;
+      font-size: 1em;
+      line-height: 1.5;
+      /* Prevent content from moving during zoom */
+      min-width: 320px;
+      min-height: 500px;
+    }
+    
+    @keyframes textflicker {
+      from {
+        text-shadow: 0.5px 0 0 #ea36af, -1px 0 0 #75fa69;
+      }
+      to {
+        text-shadow: 1px 0.25px 1px #ea36af, -0.5px -0.25px 1px #75fa69;
+      }
+    }
+    
+    /* Custom Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 14px;
+      height: 14px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgba(74, 88, 89, 0.2);
+      border-radius: 10px;
+      margin: 5px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #9B695D;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+      box-shadow: 0 0 6px rgba(126, 189, 194, 0.5);
+      position: relative;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #7EBDC2;
+      border: 2px solid transparent;
+      background-clip: content-box;
+      animation: scrollThumbFlicker 0.05s infinite alternate;
+    }
+    
+    @keyframes scrollThumbFlicker {
+      from {
+        box-shadow: 0 0 4px #ea36af, 0 0 2px #75fa69;
+      }
+      to {
+        box-shadow: 0 0 6px #ea36af, 0 0 4px #75fa69;
+      }
+    }
+
+    /* Custom Scrollbar for Modal Popups */
+    .modal-content::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: rgba(74, 88, 89, 0.2);
+      border-radius: 10px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background: #9B695D;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: #7EBDC2;
+    }
+    
+    .container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      /* Ensure container maintains size during zoom */
+      min-height: 500px;
+      padding: 2rem 1rem;
+    }
+    
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1676745326552-e4bbb9578aa1?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+      background-size: cover;
+      opacity: 0.15;
+      z-index: -1;
+    }
+    
+    .header-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .profile-image {
+      display: flex;
+      justify-content: center;
+    }
+    
+
+    .image-frame {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #9B695D;
+  box-shadow: 0 0 20px rgba(126, 189, 194, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: brightness(0.85) contrast(0.9) blur(0.1)
+}
+
+
+    
+    /* Header Title Container with inline-block so width is defined by its content */
+    .title {
+      text-align: left;
+      color: #36311F;
+      display: inline-block;
+    }
+    
+    .title h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Flex container for the subtitle and email card */
+    .title-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    
+    .title-text {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    
+    /* Email card styled as a small card */
+/* Email card styled as a flatter element */
+.email-card {
+  display: flex;
+  align-items: stretch; /* Ensures children expand fully */
+  border: 1px solid rgba(155, 105, 93, 0.3);
+  border-radius: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  height: 100%; /* Makes sure no extra height is added */
+}
+
+.email-text {
+  color: #4A5859;
+  padding: 0.3rem 0.8rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.clipboard-btn {
+  background-color: #9B695D;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #E8D7A9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* Ensures it takes up all available space */
+  width: auto;
+  height: auto; /* Reset height issues */
+  padding: 0; /* Ensures no extra padding */
+  margin: 0; /* Ensures no extra margins */
+  border-radius: 0;
+}
+
+.clipboard-btn i {
+  padding: 0.8rem; /* Keeps icon clickable but removes button height issues */
+  display: block; /* Makes sure it's not affecting layout */
+}
+
+.clipboard-btn:hover {
+  background-color: #7EBDC2;
+}
+
+
+    
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      width: 90%;
+      max-width: 600px;
+    }
+    
+    .btn {
+      background-color: #9B695D;
+      color: #E8D7A9;
+      border: none;
+      padding: 1.2rem 0.8rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 0.3rem;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(59, 59, 59, 0.3);
+      letter-spacing: 0.1em;
+      /* Adding CRT text effect to buttons */
+      text-shadow: 0.05rem 0 0.05rem #ea36af, -0.1rem 0 0.05rem #75fa69;
+      animation-duration: 0.02s;
+      animation-name: textflicker;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    
+    .btn:hover {
+      background-color: #4A5859;
+      transform: translateY(-3px);
+    }
+    
+    /* Social Media Icons Styles */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+    
+    .social-icon {
+      font-size: 2.5rem;
+      color: #9B695D;
+      transition: all 0.3s ease;
+      /* CRT text effect */
+      text-shadow: 0.05rem 0 0.05rem #ea36af, -0.1rem 0 0.05rem #75fa69;
+      animation-duration: 0.02s;
+      animation-name: textflicker;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    
+    .social-icon:hover {
+      color: #4A5859;
+      transform: translateY(-3px);
+    }
+    
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+    }
+    
+    .modal-content {
+      position: relative;
+      background-color: #7EBDC2;
+      color: #36311F;
+      width: 80%;
+      max-width: 800px;
+      max-height: 80vh;
+      overflow-y: auto;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      box-shadow: 0 0 20px rgba(126, 189, 194, 0.5), 0 0 40px rgba(155, 105, 93, 0.3);
+      border: 2px solid #9B695D;
+    }
+    
+    .crt-content {
+      text-shadow: 0.05rem 0 0.05rem #ea36af, -0.1rem 0 0.05rem #75fa69;
+      animation-duration: 0.02s;
+      animation-name: textflicker;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    
+    .modal-content h2 {
+      color: #9B695D;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #36311F;
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    
+    .modal-content p, .modal-content li {
+      margin-bottom: 1rem;
+    }
+    
+    .modal-content h3 {
+      color: #4A5859;
+      margin: 1.5rem 0 0.8rem 0;
+    }
+    
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group label {
+      margin-bottom: 0.5rem;
+      color: #4A5859;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      padding: 0.8rem;
+      border: 1px solid #9B695D;
+      border-radius: 0.3rem;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #36311F;
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      background-color: #7EBDC2;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 0.3rem;
+      transition: all 0.3s ease;
+      justify-self: start;
+    }
+    
+    .submit-btn:hover {
+      background-color: #9B695D;
+    }
+    
+    /* Updated Skills Section */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    
+    .skill {
+      background-color: #7EBDC2;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      text-shadow: none;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Create varied background colors for skills */
+    .skill:nth-child(3n+1) {
+      background-color: #7EBDC2;
+    }
+    
+    .skill:nth-child(3n+2) {
+      background-color: #9B695D;
+    }
+    
+    .skill:nth-child(3n+3) {
+      background-color: #4A5859;
+    }
+    
+    .skill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.2) 38%, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0) 48%);
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      transition: background-position 0.5s ease-in-out;
+    }
+    
+    .skill:hover::before {
+      background-position: 0 0;
+    }
+    
+    /* Updated Education Section */
+    .education-container {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .degree-card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 0.8rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #7EBDC2;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .degree-card:nth-child(2) {
+      border-left-color: #9B695D;
+    }
+    
+    .degree-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #36311F;
+    }
+    
+    .degree-school {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .school-icon {
+      margin-right: 0.5rem;
+      color: #9B695D;
+    }
+    
+    .degree-date {
+      font-style: italic;
+      color: #4A5859;
+      font-size: 0.9rem;
+    }
+    
+    /* Updated Contact Information */
+    .contact-container {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 0.6rem;
+      transition: background-color 0.3s ease;
+    }
+    
+    .contact-item:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .contact-icon {
+      font-size: 1.2rem;
+      color: #9B695D;
+      margin-right: 0.8rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+    
+    .contact-info {
+      font-size: 0.95rem;
+      color: #36311F;
+    }
+    
+    /* Updated Course List to be buttons */
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .course-button {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 1rem;
+      border-radius: 0.6rem;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #36311F;
+      border-left: 4px solid #7EBDC2;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .course-button:nth-child(3n+2) {
+      border-left-color: #9B695D;
+    }
+    
+    .course-button:nth-child(3n+3) {
+      border-left-color: #4A5859;
+    }
+    
+    .course-button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Updated Project and Work Cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .project-card, .work-card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 0.8rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #7EBDC2;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card:nth-child(2), .work-card:nth-child(2) {
+      border-left-color: #9B695D;
+    }
+    
+    .card-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: #36311F;
+    }
+    
+    .card-subtitle {
+      font-style: italic;
+      color: #4A5859;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .card-text {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(155, 105, 93, 0.3);
+    }
+    
+    .card-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .tech-tag {
+      background-color: rgba(126, 189, 194, 0.3);
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+    }
+    
+    .card-link {
+      color: #9B695D;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .card-link:hover {
+      color: #4A5859;
+      text-decoration: underline;
+    }
+    .fixed-icon {
+        width: 2.6em; /* Ensures consistent width */
+        text-align: center; /* Keeps it aligned properly */
+        }
+
+    @media (max-width: 768px) {
+      .header-section {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .title {
+        text-align: center;
+      }
+      
+      .title h1 {
+        font-size: 2rem;
+      }
+      
+      .buttons {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        width: 90%;
+        max-width: 500px;
+      }
+      
+      .btn {
+        font-size: 1.2rem;
+        padding: 1rem 0.5rem;
+      }
+      
+      .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+      }
+      
+      .image-frame {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .social-links {
+        gap: 1.5rem;
+      }
+      
+      .social-icon {
+        font-size: 2rem;
+      }
+      
+      .education-container {
+        gap: 1rem;
+      }
+      
+      .degree-card {
+        padding: 1rem;
+      }
+      
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .course-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .project-card, .work-card {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  
+  <div class="container crt-content">
+    <div class="header-section">
+      <div class="profile-image">
+        <div class="image-frame">
+            <img id="profile-pic" src="pfp.jpg" alt="Profile Picture">
+            </div>
+              
+      </div>
+      
+      <div class="title">
+        <h1>Fardeen Ahmed</h1>
+        <div class="title-info">
+          <p class="title-text">Software Engineer</p>
+          <div class="email-card">
+            <span class="email-text">afardeen@umich.edu</span>
+            <button class="clipboard-btn" onclick="copyEmail(this)" title="Copy Email">
+                <i class="fas fa-clipboard fixed-icon"></i>
+              </button>
+              
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" onclick="openModal('about')">About Me</button>
+      <button class="btn" onclick="openModal('coursework')">Coursework</button>
+      <button class="btn" onclick="openModal('projects')">Projects</button>
+      <button class="btn" onclick="openModal('work')">Work</button>
+    </div>
+    
+    <div class="social-links">
+      <a href="https://github.com/afardeen11/" class="social-icon" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/fardeen-ahmed-3901aa229/" class="social-icon" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://kazusakamoto.itch.io/poweroffire" class="social-icon" title="Itch.io">
+        <i class="fab fa-itch-io"></i>
+      </a>
+    </div>
+  </div>
+  
+  <div id="about-modal" class="modal">
+    <div class="modal-content crt-content">
+      <button class="close" onclick="closeModal('about')">&times;</button>
+      <h2>About Me</h2>
+      <p>Hello! I'm Fardeen Ahmed, a Software Engineer and Computer Science graduate from the University of Michigan. I'm passionate about creating innovative software solutions that bridge technology and human needs. Based in New York City, I apply my skills to real-world projects, continuously exploring new ways to push the boundaries of software development.</p>
+      
+      <h3>My Education</h3>
+      <div class="education-container">
+        <div class="degree-card">
+          <div class="degree-title">Master of Science in Computer Science and Engineering</div>
+          <div class="degree-school">
+            <i class="fas fa-university school-icon"></i>
+            University of Michigan
+          </div>
+          <div class="degree-date">September 2024 - May 2025</div>
+        </div>
+        
+        <div class="degree-card">
+          <div class="degree-title">Bachelor of Sciences in Engineering (Computer Science)</div>
+          <div class="degree-school">
+            <i class="fas fa-university school-icon"></i>
+            University of Michigan
+          </div>
+          <div class="degree-date">September 2021 - May 2025</div>
+        </div>
+      </div>
+      
+      <h3>Skills</h3>
+      <div class="skills">
+        <span class="skill">C++</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">C</span>
+        <span class="skill">C#</span>
+        <span class="skill">Python</span>
+        <span class="skill">SQL</span>
+        <span class="skill">Java</span>
+        <span class="skill">PHP</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">RESTful API</span>
+        <span class="skill">React</span>
+        <span class="skill">Flask</span>
+        <span class="skill">Unity</span>
+        <span class="skill">GitHub</span>
+        <span class="skill">PGAdmin 4</span>
+        <span class="skill">Heroku</span>
+        <span class="skill">Postman</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">Google Colab</span>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Coursework Modal -->
+  <div id="coursework-modal" class="modal">
+    <div class="modal-content crt-content">
+      <button class="close" onclick="closeModal('coursework')">&times;</button>
+      <h2>Coursework</h2>
+      <p></p>
+      
+      <div class="course-grid">
+        <button class="course-button" onclick="window.open('#', '_blank')">Data Structures and Algorithms</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Foundations of Computer Science</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Databases</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Data Analytics Tools and Techniques</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Intro to Computer Security</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Web Systems</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Introduction to Game Development</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Introduction to Algorithms</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">User Interface Development</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Natural Language Programming</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Computer Graphics and Generative Models</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Advanced Compilers</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Software Engineering</button>
+        <button class="course-button" onclick="window.open('#', '_blank')">Human-AI Interaction & Systems</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Projects Modal -->
+  <div id="projects-modal" class="modal">
+    <div class="modal-content crt-content">
+      <button class="close" onclick="closeModal('projects')">&times;</button>
+      <h2>Projects</h2>
+      
+      <div class="card-container">
+        <div class="project-card">
+          <div class="card-title">The Power of Fire - 2D Platformer Game</div>
+          <div class="card-subtitle">2D parkour platformer focused on dynamic movement mechanics</div>
+          
+          <p class="card-text">I designed and developed a fast-paced 2D platformer that emphasizes fluid movement mechanics, focusing on rocket jumps and dash abilities. The game features dynamic level design that gradually introduces complexity while maintaining engaging gameplay. Working closely with a team of playtesters, I iterated on the game's feel and responsiveness based on regular user feedback, resulting in precisely tuned movement physics that feels both challenging and satisfying.</p>
+          
+          <p class="card-text">The development process involved creating custom C# scripts for the movement system in Unity, designing level layouts that progressively challenge players' mastery of the mechanics, and implementing visual effects that enhance the game's kinetic energy. The game was successfully featured at the 494 Showcase and released publicly on itch.io, where it received positive player feedback for its tight controls and engaging level design.</p>
+          
+          <div class="card-footer">
+            <div class="card-tech">
+              <span class="tech-tag">Unity</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">Level Design</span>
+            </div>
+            <a href="https://kazusakamoto.itch.io/poweroffire" target="_blank" class="card-link">View Game <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="card-title">NLP Conversation Entailment Project</div>
+          <div class="card-subtitle">Research project on conversational AI and natural language understanding</div>
+          
+          <p class="card-text">This research project addressed the challenge of improving conversational entailment models for multi-turn dialogue systems. I developed a hierarchical attention-based neural network architecture that more effectively captures the context and semantic relationships in complex conversations. The model was designed to understand implications and unstated assumptions in natural dialogue, significantly improving coherence in AI conversation systems.</p>
+          
+          <p class="card-text">A major component of this work involved fine-tuning state-of-the-art large language models including Mistral 7B and LLaMA. I implemented custom training pipelines and evaluation methodologies to optimize these models for conversational context awareness. The research culminated in co-authoring a paper that proposes novel approaches to multi-turn dialogue understanding, with our findings indicating a substantial improvement over baseline methods in maintaining contextual coherence across multiple conversation turns.</p>
+          
+          <div class="card-footer">
+            <div class="card-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">LLMs</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Work Modal -->
+  <div id="work-modal" class="modal">
+    <div class="modal-content crt-content">
+      <button class="close" onclick="closeModal('work')">&times;</button>
+      <h2>Work Experience</h2>
+      
+      <div class="card-container">
+        <div class="work-card">
+          <div class="card-title">Ambassco</div>
+          <div class="card-subtitle">November 2023 - August 2024</div>
+          
+          <p class="card-text">At Ambassco, I led the development of a social platform that bridges companies with GenZ consumers through interactive surveys and feedback channels. Following strict Figma design guidelines, I implemented a responsive front-end interface using React that accurately translated visual concepts into functional user experiences. The platform required a sophisticated backend system, which I engineered using MySQL and Flask, designing comprehensive entity-relationship diagrams to ensure data integrity and efficient query performance.</p>
+          
+          <p class="card-text">As project lead, I managed a cross-functional team of developers, coordinating the integration of frontend and backend components while maintaining consistent progress reporting to stakeholders. A significant achievement was developing a comprehensive analytics dashboard featuring interactive data visualizations that allowed companies to track engagement metrics and demographic insights. I also created detailed onboarding documentation that streamlined the process for new developers and clients to understand API access, data formatting protocols, and server connection procedures.</p>
+          
+          <div class="card-footer">
+            <div class="card-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <a href="https://www.ambassco.com" target="_blank" class="card-link">Company Site <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        
+        <div class="work-card">
+          <div class="card-title">TipTopTechnologies</div>
+          <div class="card-subtitle">May 2023 - Present</div>
+          
+          <p class="card-text">At TipTopTechnologies, I've been instrumental in developing a news-focused chatbot platform that delivers real-time information. My responsibilities began with creating the frontend interface using HTML, CSS, and JavaScript, ensuring a responsive and intuitive user experience. I integrated backend API calls using PHP, establishing robust communication channels between users and various news data sources. A key technical achievement was implementing secure login integration through Google and Azure OAuth systems, enhancing user authentication while maintaining privacy standards.</p>
+          
+          <p class="card-text">Beyond development work, I've taken on significant project management responsibilities using Asana and GitHub to coordinate team efforts, tracking progress metrics and reviewing pull requests to maintain code quality. I created comprehensive technical documentation detailing API protocols and data formatting procedures that significantly improved onboarding efficiency for new team members. I've also contributed to business development by collaborating on the investor deck, refining content to effectively communicate our value proposition, and designing database architecture through detailed Entity Relationship Diagrams that prioritize user-centric data organization.</p>
+          
+          <div class="card-footer">
+            <div class="card-tech">
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">OAuth</span>
+            </div>
+            <a href="https://360news.feeltiptop.com/" target="_blank" class="card-link">Project Site <i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Modal Functions
+    function openModal(id) {
+      document.getElementById(id + '-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal(id) {
+      document.getElementById(id + '-modal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modal when clicking outside of modal content
+    window.onclick = function(event) {
+      const modals = document.getElementsByClassName('modal');
+      for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+          modals[i].style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      }
+    }
+
+    // Copy email to clipboard function
+    function copyEmail(button) {
+  const email = "afardeen@umich.edu";
+  const icon = button.querySelector("i");
+
+  // Copy email to clipboard
+  navigator.clipboard.writeText(email).then(() => {
+    icon.classList.remove("fa-clipboard");
+    icon.classList.add("fa-check");
+
+    // Revert icon back to clipboard after 2 seconds
+    setTimeout(() => {
+      icon.classList.remove("fa-check");
+      icon.classList.add("fa-clipboard");
+    }, 2000);
+  }).catch(() => {
+    alert("Failed to copy email address.");
+  });
+}
+
+
+  </script>
+</body>
+</html>
